@@ -26,6 +26,17 @@ void draw()
 {
   if(mode == "Menu");
   {
+    background(0);
+    
+    fill(0, 255, 255);
+    textAlign(CENTER, CENTER);
+    textSize(25);
+    text("PONG",500, 300);
+    textSize(15);
+    text("Instructions:",500, 400);
+    textSize(12);
+    text("Player 1: W for UP and S for DOWN",500, 500);
+    text("Player 2: O for UP and L for DOWN",500, 515);
   }
   
   if(mode == "Easy");
