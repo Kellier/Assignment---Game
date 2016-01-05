@@ -9,9 +9,14 @@ int buttonValue = 0;
 String mode = "Menu";
 int a = 0;
 
+Pitch pitch;
+
 void setup()
 {
-  size(1000, 1000);
+  size(1000, 700);
+  
+  pitch = new Pitch();
+  
   smooth();
   frameRate(30);
   cp5 = new ControlP5(this);
@@ -24,7 +29,7 @@ void setup()
 
 void draw()
 {
-  if(mode == "Menu");
+  if( mode == "Menu" )
   {
     background(0);
     
@@ -39,16 +44,22 @@ void draw()
     text("Player 2: O for UP and L for DOWN",500, 515);
   }
   
-  if(mode == "Easy");
+  if( mode == "Easy" )
   {
+    background(35, 227, 23);
+    
+    pitch.barrier();
+    pitch.lines();
   }
   
-  if(mode == "Medium");
+  if (mode == "Medium" )
   {
+    background(35, 227, 23);
   }
   
-  if(mode == "Hard");
+  if( mode == "Hard" )
   {
+    background(35, 227, 23);
   }
 }
 
