@@ -9,6 +9,7 @@ int buttonValue = 0;
 String mode = "Menu";
 int a = 0;
 
+Menu fig;
 Pitch pitch;
 Pitch2 pitch2;
 Pitch3 pitch3;
@@ -19,6 +20,7 @@ void setup()
 {
   size(1000, 700);
   
+  fig = new Menu();
   pitch = new Pitch();
   pitch2 = new Pitch2();
   pitch3 = new Pitch3();
@@ -50,6 +52,10 @@ void draw()
     textSize(12);
     text("Player 1: W for UP and S for DOWN",500, 500);
     text("Player 2: O for UP and L for DOWN",500, 515);
+    
+    fig.Figure1();
+    fig.Figure2();
+    
   }
   
   if( mode == "Easy" )
@@ -72,6 +78,7 @@ void draw()
     
     pitch2.barrier();
     pitch2.lines();
+    pitch2.wall();
     
     pl1.move();
     pl1.Ply1();
@@ -86,6 +93,8 @@ void draw()
     
     pitch3.barrier();
     pitch3.lines();
+    pitch3.wall();
+    pitch3.movewall();
     
     pl1.move();
     pl1.Ply1();
