@@ -35,7 +35,7 @@ class Player1
   {
     stroke(0);
     line(a, y - 60, a, y + 60);
-    stroke(0);
+    stroke(227, 11, 11);
     fill(227, 11, 11);
     ellipse(a, y, rad, rad);
   }

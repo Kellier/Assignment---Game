@@ -10,14 +10,20 @@ String mode = "Menu";
 int a = 0;
 
 Pitch pitch;
+Pitch2 pitch2;
+Pitch3 pitch3;
 Player1 pl1;
+Player2 pl2;
 
 void setup()
 {
   size(1000, 700);
   
   pitch = new Pitch();
+  pitch2 = new Pitch2();
+  pitch3 = new Pitch3();
   pl1 = new Player1();
+  pl2 = new Player2();
   
   smooth();
   frameRate(30);
@@ -55,16 +61,25 @@ void draw()
     
     pl1.move();
     pl1.Ply1();
+    
+    pl2.move();
+    pl2.Ply2();
   }
   
   if (mode == "Medium" )
   {
     background(35, 227, 23);
+    
+    pitch2.barrier();
+    pitch2.lines();
   }
   
   if( mode == "Hard" )
   {
     background(35, 227, 23);
+    
+    pitch3.barrier();
+    pitch3.lines();
   }
 }
 
