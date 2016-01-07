@@ -72,6 +72,12 @@ void draw()
     
     pitch2.barrier();
     pitch2.lines();
+    
+    pl1.move();
+    pl1.Ply1();
+    
+    pl2.move();
+    pl2.Ply2();
   }
   
   if( mode == "Hard" )
@@ -80,6 +86,12 @@ void draw()
     
     pitch3.barrier();
     pitch3.lines();
+    
+    pl1.move();
+    pl1.Ply1();
+    
+    pl2.move();
+    pl2.Ply2();
   }
 }
 
