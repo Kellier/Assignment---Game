@@ -10,12 +10,14 @@ String mode = "Menu";
 int a = 0;
 
 Pitch pitch;
+Player1 pl1;
 
 void setup()
 {
   size(1000, 700);
   
   pitch = new Pitch();
+  pl1 = new Player1();
   
   smooth();
   frameRate(30);
@@ -50,6 +52,9 @@ void draw()
     
     pitch.barrier();
     pitch.lines();
+    
+    pl1.move();
+    pl1.Ply1();
   }
   
   if (mode == "Medium" )

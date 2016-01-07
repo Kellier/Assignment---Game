@@ -30,9 +30,10 @@ class Pitch
   void lines()
   {
     stroke(255);
-    line(x, 0, x, y);
-    line(x, 350, x, 400);
     fill(35, 227, 23);
     ellipse(x, y / 2, rad, rad);
+    stroke(255);
+    line(x, 0, x, y);
+    line(x, 350, x, 400);
   }
 }
