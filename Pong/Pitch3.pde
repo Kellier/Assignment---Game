@@ -2,9 +2,9 @@ class Pitch3 extends Pitch
 {
   //Fields
   float radius = 50;
+  float x = width / 2;
   float y = height / 2;
   float speed = 3;
-  float yspeed = 0;
   
   void barrier()
   {
@@ -20,18 +20,14 @@ class Pitch3 extends Pitch
       
   void movewall()
   {
-    if (y < (radius + h))
+    if(y < radius + h)
     {
-      yspeed = -speed;
-      y = radius + h;
+      y += 5;
     }
     if(y > height - (radius + h))
     {
-      yspeed = speed;
-      y = height - (radius + h);
+      y -= 5;
     }
-    
-    y += yspeed;
   }
     
   void wall()
