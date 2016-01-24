@@ -25,7 +25,18 @@ class Ball extends Player1
       dx = -dx;
     }
     
+    if(by > height - 10)
+    {
+      dy = -dy;
+    }
+    
+    if(by < 10)
+    {
+      dy = -dy;
+    }
+    
     bx = bx + dx;
+    by = by + dy;
   }
   
   void bll()
