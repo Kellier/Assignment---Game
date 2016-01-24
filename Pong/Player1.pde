@@ -1,19 +1,21 @@
 class Player1
 {
   //Fields
-  float y;
   float rad;
   float centre;
-  float a, b;
+  float rectx, recty;
   float speed;
+  float w, h;
   
   //Constructor
   Player1()
   {
     rad = 40;
-    y = height / 2;
-    a = 30;
+    rectx = 30;
+    recty = height / 2 - 60;
     speed = 5.0f;
+    w = 5;
+    h = 120;
   }
   
   void move()
@@ -22,22 +24,26 @@ class Player1
     {
       if(key == 'w')
       {
-        y -= 5;
+        if(recty >= 0)
+        {
+          recty = recty - h * 0.2;
+        }
       }
       if(key == 's')
       {
-        y += 5;
+        if(recty <= height - h)
+        {
+          recty = recty + h * 0.2;
+        }
       }
     }
   }
   
   void Ply1()
   {
-    stroke(0);
-    line(a, y - 60, a, y + 60);
     stroke(227, 11, 11);
     fill(227, 11, 11);
-    ellipse(a, y, rad, rad);
+    rect(rectx, recty, w, h);
   }
     
 }

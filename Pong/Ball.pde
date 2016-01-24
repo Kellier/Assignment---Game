@@ -1,4 +1,4 @@
-class Ball extends Player1
+class Ball extends Player2
 {
   float bx;
   float by;
@@ -15,12 +15,12 @@ class Ball extends Player1
   
   void bounce()
   {
-    if(bx > width - 10)
+    if((bx > recta) && (by >= rectb) && (by <= rectb + h))
     {
       dx = -dx;
     }
     
-    if(bx < 10)
+    if((bx < rectx) && (by >= recty) && (by <= recty + h))
     {
       dx = -dx;
     }
