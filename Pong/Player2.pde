@@ -34,4 +34,5 @@ class Player2 extends Player1
     fill(7, 29, 103);
     rect(recta, rectb, w, h);
   }
+
 }

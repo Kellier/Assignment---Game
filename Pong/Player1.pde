@@ -21,7 +21,7 @@ class Player1
   void move()
   {
     if(keyPressed)
-    {
+    {      
       if(key == 'w')
       {
         if(recty >= 0)
@@ -29,6 +29,7 @@ class Player1
           recty = recty - h * 0.2;
         }
       }
+      
       if(key == 's')
       {
         if(recty <= height - h)
