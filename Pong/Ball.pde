@@ -5,6 +5,7 @@ class Ball extends Player2
   float br;
   float speedx;
   float speedy;
+  color c;
   
   Ball()
   {
@@ -20,11 +21,13 @@ class Ball extends Player2
     if((bx > recta) && (by >= rectb) && (by <= rectb + h))
     {
       speedx = -speedx;
+      c = color(7, 29, 103);
     }
     
     if((bx < rectx) && (by >= recty) && (by <= recty + h))
     {
       speedx = -speedx;
+      c = color(227, 11, 11);
     }
     
     if(by > height - 10)
@@ -51,8 +54,7 @@ class Ball extends Player2
   
   void bll()
   {
-    fill(255);
-    stroke(255);
+    color(c);
     ellipse(bx, by, br * 2, br * 2);
   }
   
