@@ -21,4 +21,11 @@ class Pitch extends Object
     line(pitchx, 0, pitchx, pitchy);
     line(pitchx, 350, pitchx, 400);
   }
+  
+  void wall()
+  {
+    stroke(0);
+    fill(0);
+    rect(490, 260, 20, 180);
+  }
 }

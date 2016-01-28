@@ -78,6 +78,7 @@ void draw()
     
     pitch.position();
     pitch.thing();
+    pitch.wall();
     
     pl1.position();
     pl1.thing();
