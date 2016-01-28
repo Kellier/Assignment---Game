@@ -1,5 +1,5 @@
 class Pitch extends Object
-{ 
+{   
   void position()
   {
     stroke(0);
@@ -26,6 +26,6 @@ class Pitch extends Object
   {
     stroke(0);
     fill(0);
-    rect(490, 260, 20, 180);
+    rect(wallx, wally, wallw, wallh);
   }
 }

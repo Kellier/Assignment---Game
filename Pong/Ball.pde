@@ -36,6 +36,19 @@ class Ball extends Object
     by = by + speedy;
   }
   
+  void barrier()
+  {
+    if((bx > wallx) && (by >= wally) && (by <= wally + wallh))
+    {
+      speedx = -speedx;
+    }
+    
+    if((bx < wallx) && (by >= wally) && (by <= wally + wallh))
+    {
+      speedx = -speedx;
+    }
+  }
+  
   void thing()
   {
     color(c);
