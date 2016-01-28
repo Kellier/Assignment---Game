@@ -1,24 +1,8 @@
-class Ball extends Player2
-{
-  float bx;
-  float by;
-  float br;
-  float speedx;
-  float speedy;
-  color c;
-  
-  Ball()
+class Ball extends Object
+{  
+  void position()
   {
-    bx = width / 2;
-    by = height / 2;
-    br = 10;
-    speedx = random(3, 5);
-    speedy = random(3, 5);
-  }
-  
-  void bounce()
-  {
-    if((bx > recta) && (by >= rectb) && (by <= rectb + h))
+    if((bx > recta) && (by >= recty) && (by <= recty + h))
     {
       speedx = -speedx;
       c = color(7, 29, 103);
@@ -52,7 +36,7 @@ class Ball extends Player2
     by = by + speedy;
   }
   
-  void bll()
+  void thing()
   {
     color(c);
     ellipse(bx, by, br * 2, br * 2);

@@ -1,21 +1,6 @@
-class Pitch
-{
-  //Fields
-  int h, w;
-  int x, y;
-  float rad;
-  
-  Pitch()
-  {
-    //Constructor
-    h = 10;
-    w = width;
-    x = width / 2;
-    y = height;
-    rad = 100;
-  }
-  
-  void barrier()
+class Pitch extends Object
+{ 
+  void position()
   {
     stroke(0);
     fill(0);
@@ -27,13 +12,13 @@ class Pitch
     rect(990, 600, 10, 100);
   }
   
-  void lines()
+  void thing()
   {
     stroke(255);
     fill(35, 227, 23);
-    ellipse(x, y / 2, rad, rad);
+    ellipse(pitchx, pitchy / 2, rad, rad);
     stroke(255);
-    line(x, 0, x, y);
-    line(x, 350, x, 400);
+    line(pitchx, 0, pitchx, pitchy);
+    line(pitchx, 350, pitchx, 400);
   }
 }

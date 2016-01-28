@@ -11,8 +11,6 @@ int a = 0;
 
 Menu fig;
 Pitch pitch;
-Pitch2 pitch2;
-Pitch3 pitch3;
 Player1 pl1;
 Player2 pl2;
 Ball ball;
@@ -23,8 +21,6 @@ void setup()
   
   fig = new Menu();
   pitch = new Pitch();
-  pitch2 = new Pitch2();
-  pitch3 = new Pitch3();
   pl1 = new Player1();
   pl2 = new Player2();
   ball = new Ball();
@@ -63,48 +59,51 @@ void draw()
   {
     background(35, 227, 23);
     
-    pitch.barrier();
-    pitch.lines();
+    pitch.position();
+    pitch.thing();
     
-    pl1.move();
-    pl1.Ply1();
+    pl1.position();
+    pl1.thing();
     
-    pl2.move();
-    pl2.Ply2();
+    pl2.position();
+    pl2.thing();
     
-    ball.bounce();
-    ball.bll();
+    ball.position();
+    ball.thing();
   }
   
   if (mode == "Medium" )
   {
     background(35, 227, 23);
     
-    pitch2.barrier();
-    pitch2.lines();
-    pitch2.wall();
+    pitch.position();
+    pitch.thing();
     
-    pl1.move();
-    pl1.Ply1();
+    pl1.position();
+    pl1.thing();
     
-    pl2.move();
-    pl2.Ply2();
+    pl2.position();
+    pl2.thing();
+    
+    ball.position();
+    ball.thing();
   }
   
   if( mode == "Hard" )
   {
     background(35, 227, 23);
     
-    pitch3.barrier();
-    pitch3.lines();
-    pitch3.wall();
-    pitch3.movewall();
+    pitch.position();
+    pitch.thing();
     
-    pl1.move();
-    pl1.Ply1();
+    pl1.position();
+    pl1.thing();
     
-    pl2.move();
-    pl2.Ply2();
+    pl2.position();
+    pl2.thing();
+    
+    ball.position();
+    ball.thing();
   }
 }
 

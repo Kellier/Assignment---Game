@@ -1,24 +1,6 @@
-class Player1
-{
-  //Fields
-  float rad;
-  float centre;
-  float rectx, recty;
-  float speed;
-  float w, h;
-  
-  //Constructor
-  Player1()
-  {
-    rad = 40;
-    rectx = 30;
-    recty = height / 2 - 60;
-    speed = 5.0f;
-    w = 5;
-    h = 120;
-  }
-  
-  void move()
+class Player1 extends Object
+{  
+  void position()
   {
     if(keyPressed)
     {      
@@ -40,7 +22,7 @@ class Player1
     }
   }
   
-  void Ply1()
+  void thing()
   {
     stroke(227, 11, 11);
     fill(227, 11, 11);
