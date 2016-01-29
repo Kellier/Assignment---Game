@@ -78,10 +78,8 @@ void draw()
   
   if (mode == "Medium" )
   {
-    background(35, 227, 23);
+    background(0);
     
-    pitch.position();
-    pitch.thing();
     pitch.wall();
     
     pl1.position();
