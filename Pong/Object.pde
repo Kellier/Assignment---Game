@@ -12,6 +12,7 @@ abstract class Object
   float speedx;
   float speedy;
   color c;
+  float cx, cy;
   
   
   Object()
@@ -39,6 +40,9 @@ abstract class Object
     
     this.speedx = random(3,5);
     this.speedy = random(3,5);
+    
+    this.cx = random(0, width);
+    this.cy = random(0, height);
   }
   
   abstract void position();

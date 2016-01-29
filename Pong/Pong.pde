@@ -93,6 +93,7 @@ void draw()
     ball.barrier();
     
     star.position();
+    star.thing();
   }
   
   if( mode == "Hard" )
