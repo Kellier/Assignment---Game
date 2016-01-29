@@ -9,11 +9,14 @@ int buttonValue = 0;
 String mode = "Menu";
 int a = 0;
 
+ArrayList<Object> objects = new ArrayList<Object>();
+
 Menu fig;
 Pitch pitch;
 Player1 pl1;
 Player2 pl2;
 Ball ball;
+Stars star;
 
 void setup()
 {
@@ -24,6 +27,7 @@ void setup()
   pl1 = new Player1();
   pl2 = new Player2();
   ball = new Ball();
+  star = new Stars();
   smooth();
   frameRate(30);
   cp5 = new ControlP5(this);
@@ -89,6 +93,8 @@ void draw()
     ball.position();
     ball.thing();
     ball.barrier();
+    
+    star.position();
   }
   
   if( mode == "Hard" )
