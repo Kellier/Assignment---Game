@@ -6,10 +6,6 @@ class Pitch extends Object
     fill(0);
     rect(0, 0, width, 10);
     rect(0, 690, width, 10);
-    rect(0, 0, 10, 100);
-    rect(0, 600, 10, 100);
-    rect(990, 0, 10, 100);
-    rect(990, 600, 10, 100);
   }
   
   void thing()

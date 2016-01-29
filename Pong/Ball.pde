@@ -2,13 +2,13 @@ class Ball extends Object
 {  
   void position()
   {
-    if((bx > recta) && (by >= recty) && (by <= recty + h))
+    if((bx >= recta) && (bx <= recta + w) && (by >= recty) && (by <= recty + h))
     {
       speedx = -speedx;
       c = color(7, 29, 103);
     }
     
-    if((bx < rectx) && (by >= recty) && (by <= recty + h))
+    if((bx <= rectx) && (bx <= rectx + w) && (by >= recty) && (by <= recty + h))
     {
       speedx = -speedx;
       c = color(227, 11, 11);
