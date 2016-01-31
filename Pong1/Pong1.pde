@@ -10,6 +10,8 @@ String mode = "Menu";
 int a = 0;
 
 ArrayList<Object> objects = new ArrayList<Object>();
+ArrayList<Pitch> pitchs = new ArrayList<Pitch>();
+ArrayList<Star> stars = new ArrayList<Star>();
 
 boolean[] keys = new boolean[512];
 
@@ -28,18 +30,18 @@ void setup()
   objects.add(ply2);
   
   Pitch pitch = new Pitch();
-  objects.add(pitch);
+  pitchs.add(pitch);
   
   for(int i = 0; i < 30; i ++)
   {
     Star star = new Star(
-        random(100, width - 100)
-        , random(100, height - 100)
-        , random(50, 100)
+        random(0, width)
+        , random(0, height)
+        , random(10, 50)
         , color(random(100, 255), random(100, 255), random(100, 255))
-        , (int) random(3, 20)
+        , (int) random(5, 10)
         );
-    objects.add(star);
+    stars.add(star);
   }
   
   smooth();
@@ -93,6 +95,12 @@ void draw()
       go.position();
       go.thing();
     }
+    
+    for(Pitch pitch: pitchs)
+    {
+      pitch.position();
+      pitch.thing();
+    }
   }
   
   if (mode == "Medium" )
@@ -104,6 +112,12 @@ void draw()
       Object go = objects.get(i);
       go.position();
       go.thing();
+    }
+    
+    for(Star star: stars)
+    {
+      star.position();
+      star.thing();
     }
   }
   
