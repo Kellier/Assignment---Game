@@ -30,7 +30,7 @@ void setup()
   Pitch pitch = new Pitch();
   objects.add(pitch);
   
-  for(int i = 0; i < 40; i ++)
+  for(int i = 0; i < 30; i ++)
   {
     Star star = new Star(
         random(100, width - 100)

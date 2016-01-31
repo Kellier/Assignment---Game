@@ -34,9 +34,7 @@ class Star extends Object
     float lastY;
     lastX = 0;
     lastY = -radius; 
-    
     stroke(c);
-    
     for (int i = 1 ; i <= (points * 2) ; i ++)
     {
       float theta = i * thetaInc;
@@ -48,9 +46,9 @@ class Star extends Object
       }
       else
       {
-        r = radius;        
+        r = radius;
       }
-
+      
       x = sin(theta) * r;
       y = -cos(theta) * r;
       line(lastX, lastY, x, y);
