@@ -27,6 +27,21 @@ void setup()
   Player2 ply2 = new Player2('O', 'L', -10, 25, color(7, 29, 103));
   objects.add(ply2);
   
+  Pitch pitch = new Pitch();
+  objects.add(pitch);
+  
+  for(int i = 0; i < 40; i ++)
+  {
+    Star star = new Star(
+        random(100, width - 100)
+        , random(100, height - 100)
+        , random(50, 100)
+        , color(random(100, 255), random(100, 255), random(100, 255))
+        , (int) random(3, 20)
+        );
+    objects.add(star);
+  }
+  
   smooth();
   frameRate(30);
   cp5 = new ControlP5(this);
@@ -78,14 +93,18 @@ void draw()
       go.position();
       go.thing();
     }
-    
-    
   }
   
   if (mode == "Medium" )
   {
     background(0);
     
+    for(int i = objects.size() - 1; i >= 0; i--)
+    {
+      Object go = objects.get(i);
+      go.position();
+      go.thing();
+    }
   }
   
   if( mode == "Hard" )
