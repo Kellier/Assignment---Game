@@ -24,6 +24,9 @@ void setup()
   Player1 ply1 = new Player1('W', 'S', 10, 25, color(227, 11, 11));
   objects.add(ply1);
   
+  Player2 ply2 = new Player2('O', 'L', -10, 25, color(7, 29, 103));
+  objects.add(ply2);
+  
   smooth();
   frameRate(30);
   cp5 = new ControlP5(this);
