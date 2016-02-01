@@ -1,4 +1,4 @@
-class Object
+abstract class Object
 {
   PVector pos;
   PVector move;
@@ -22,11 +22,6 @@ class Object
     this.theta = 0.0f;
   }
   
-  void position()
-  {
-  }
-  
-  void thing()
-  {
-  } 
+  abstract void position();
+  abstract void thing(); 
 }
