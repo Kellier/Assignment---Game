@@ -51,7 +51,7 @@ class Player1 extends Object
     translate(pos.x, pos.y);
     stroke(c);
     fill(c);
-    rect(rectx, recty, w, h);
+    rect(0, 0, w, h);
     popMatrix();
   }
 }

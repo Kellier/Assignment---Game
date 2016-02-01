@@ -23,10 +23,10 @@ void setup()
   
   fig = new Menu();
   
-  Player1 ply1 = new Player1('W', 'S', 10, 25, color(227, 11, 11));
+  Player1 ply1 = new Player1('W', 'S', 30, 290, color(227, 11, 11));
   objects.add(ply1);
   
-  Player2 ply2 = new Player2('O', 'L', -10, 25, color(7, 29, 103));
+  Player2 ply2 = new Player2('O', 'L', 960, 290, color(7, 29, 103));
   objects.add(ply2);
   
   Pitch pitch = new Pitch();
