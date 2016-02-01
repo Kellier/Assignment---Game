@@ -29,7 +29,7 @@ void setup()
   Player2 ply2 = new Player2('O', 'L', 960, 290, color(7, 29, 103));
   objects.add(ply2);
   
-  Ball ball = new Ball(random(100, 900), random(0, height), color(255));
+  Ball ball = new Ball('R', random(100, 900), random(0, height), color(255));
   objects.add(ball);
   
   Pitch pitch = new Pitch();

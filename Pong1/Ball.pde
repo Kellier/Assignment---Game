@@ -1,6 +1,7 @@
 class Ball extends Object
 {
   float br = 10;
+  char reset;
   
   Ball()
   {
@@ -8,9 +9,10 @@ class Ball extends Object
     println("In Ball Default Constructor");
   }
   
-  Ball(float startx, float starty, color c)
+  Ball(char reset, float startx, float starty, color c)
   {
     super(startx, starty, 50);
+    this.reset = reset;
     this.c = c;
   }
   
@@ -38,6 +40,11 @@ class Ball extends Object
       speedy = -speedy;
     }
     
+    if(keys[reset])
+    {
+      reset();
+    }
+    
     pos.x = pos.x + speedx;
     pos.y = pos.y + speedy;
   }
@@ -50,5 +57,14 @@ class Ball extends Object
     fill(c);
     ellipse(0, 0, br * 2, br * 2);
     popMatrix();
+  }
+  
+  void reset()
+  {
+    speedx = random(3, 5);
+    speedy = random(3, 5);
+    pos.x = random(100, 900);
+    pos.y = random(0, height);
+    br = 10;
   }
 }
