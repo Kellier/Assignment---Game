@@ -2,8 +2,6 @@ class Player1 extends Object
 {
   char up;
   char down;
-  float w = 5;
-  float h = 120;
   
   Player1()
   {
@@ -51,7 +49,7 @@ class Player1 extends Object
     translate(pos.x, pos.y);
     stroke(c);
     fill(c);
-    rect(0, 0, w, h);
+    rect(rectx, recty, w, h);
     popMatrix();
   }
 }

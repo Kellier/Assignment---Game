@@ -16,6 +16,30 @@ class Ball extends Object
   
   void position()
   {
+    if((pos.x >= recta) && (pos.x <= recta + w) && (pos.y >= recty) && (pos.y <= recty + h))
+    {
+      speedx = -speedx;
+      c = color(7, 29, 103);
+    }
+    
+    if((pos.x <= rectx) && (pos.x <= rectx + w) && (pos.y >= recty) && (pos.y <= recty + h))
+    {
+      speedx = -speedx;
+      c = color(227, 11, 11);
+    }
+    
+    if(pos.y > height - 10)
+    {
+      speedy = -speedy;
+    }
+    
+    if(pos.y < 10)
+    {
+      speedy = -speedy;
+    }
+    
+    pos.x = pos.x + speedx;
+    pos.y = pos.y + speedy;
   }
   
   void thing()
