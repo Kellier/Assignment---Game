@@ -17,20 +17,17 @@ ArrayList<Star> stars = new ArrayList<Star>();
 
 boolean[] keys = new boolean[512];
 
-Menu fig;
 
 void setup()
 {
   size(1000, 700);
   
   img1 = loadImage("Menu.jpg");
-  
-  fig = new Menu();
-  
+    
   Player1 ply1 = new Player1('W', 'S', 30, 290, color(227, 11, 11));
   objects.add(ply1);
   
-  Player2 ply2 = new Player2('O', 'L', 960, 290, color(7, 29, 103));
+  Player2 ply2 = new Player2('O', 'L', 970, 290, color(7, 29, 103));
   objects.add(ply2);
   
   Ball ball = new Ball('R', random(100, 900), random(0, height), color(255));
@@ -49,6 +46,12 @@ void setup()
         , (int) random(5, 10)
         );
     stars.add(star);
+  }
+  
+  for(int j = 0; j < 3; j++)
+  {
+    Ball balls = new Ball('R', random(100, 900), random(0, height), color(255));
+    objects.add(balls);
   }
   
   smooth();
@@ -122,7 +125,20 @@ void draw()
   
   if( mode == "Hard" )
   {
-    background(35, 227, 23);
+    background(0);
+    
+    for(int i = objects.size() - 1; i >= 0; i--)
+    {
+      Object go = objects.get(i);
+      go.position();
+      go.thing();
+    }
+    
+    for(Star star: stars)
+    {
+      star.position();
+      star.thing();
+    }
     
   }
 }
