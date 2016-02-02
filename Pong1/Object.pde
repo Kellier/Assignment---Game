@@ -6,6 +6,8 @@ abstract class Object
   float rectx, recty, recta;
   float speed = 5.0f;
   float speedx, speedy;
+  float wallx, wally;
+  float wallw, wallh;
   float w, h;
   color c;
   
@@ -22,10 +24,15 @@ abstract class Object
     this.rectx = 0.0f;
     this.recty = 0.0f;
     this.recta = 0.0f;
+    this.wallx = 0.0f;
+    this.wally = 0.0f;
+    this.wallw = 20;
+    this.wallh = 180;
     this.speedx = random(3, 5);
     this.speedy = random(3, 5);
     this.w = 5;
     this.h = 120;
+    
   }
   
   abstract void position();
