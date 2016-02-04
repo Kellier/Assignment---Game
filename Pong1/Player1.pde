@@ -49,6 +49,8 @@ class Player1 extends Object
     translate(pos.x, pos.y);
     stroke(c);
     fill(c);
+    textSize(15);
+    text("Lives: " + p1_lives, 30, recty);
     rect(rectx, recty, w, h);
     popMatrix();
   }

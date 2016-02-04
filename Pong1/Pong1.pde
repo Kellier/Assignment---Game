@@ -92,8 +92,21 @@ void draw()
       Object go = objects.get(i);
       go.position();
       go.thing();
-      if(go.p1_lives == 0 || go.p2_lives == 0)
+      if(go.p1_lives == 0)
       {
+        textAlign(CENTER);
+        textSize(50);
+        fill(227, 11, 11);
+        text("Player 1 Wins!!", width / 2, height / 2);
+        go.reset();
+      }
+      
+      else if(go.p2_lives == 0)
+      {
+        textAlign(CENTER);
+        textSize(50);
+        fill(7, 29, 103);
+        text("Player 2 Wins!!", width / 2, height / 2);
         go.reset();
       }
     }
@@ -114,8 +127,21 @@ void draw()
       Object go = objects.get(i);
       go.position();
       go.thing();
-      if(go.p1_lives == 0 || go.p2_lives == 0)
+      if(go.p1_lives == 0)
       {
+        textAlign(CENTER);
+        textSize(50);
+        fill(227, 11, 11);
+        text("Player 1 Wins!!", width / 2, height / 2);
+        go.reset();
+      }
+      
+      else if(go.p2_lives == 0)
+      {
+        textAlign(CENTER);
+        textSize(50);
+        fill(7, 29, 103);
+        text("Player 2 Wins!!", width / 2, height / 2);
         go.reset();
       }
     }
@@ -141,11 +167,23 @@ void draw()
       Object go = objects.get(i);
       go.position();
       go.thing();
-      if(go.p1_lives == 0 || go.p2_lives == 0)
+      if(go.p1_lives == 0)
       {
+        textAlign(CENTER);
+        textSize(50);
+        fill(227, 11, 11);
+        text("Player 1 Wins!!", width / 2, height / 2);
         go.reset();
       }
-
+      
+      else if(go.p2_lives == 0)
+      {
+        textAlign(CENTER);
+        textSize(50);
+        fill(7, 29, 103);
+        text("Player 2 Wins!!", width / 2, height / 2);
+        go.reset();
+      }
     }
     
     for(Star star: stars)
