@@ -78,8 +78,10 @@ class Ball extends Object
   
   void reset()
   {
-    speedx = random(3, 5);
-    speedy = random(3, 5);
+    speedx = 3;
+    speedy = 3;
+    p1_lives = 5;
+    p2_lives = 5;
     pos.x = random(100, 900);
     pos.y = random(0, height);
     br = 10;

@@ -58,4 +58,8 @@ class Star extends Object
     
     popMatrix();
   }
+  
+  void reset()
+  {
+  }
 }

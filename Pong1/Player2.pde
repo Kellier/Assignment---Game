@@ -2,7 +2,6 @@ class Player2 extends Object
 {
   char up;
   char down;
-  int p2_lives;
   
   Player2()
   {
@@ -52,6 +51,10 @@ class Player2 extends Object
     fill(c);
     rect(recta, recty, w, h);
     popMatrix();
+  }
+  
+  void reset()
+  {
   }
 }
   

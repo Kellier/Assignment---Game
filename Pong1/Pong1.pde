@@ -92,6 +92,10 @@ void draw()
       Object go = objects.get(i);
       go.position();
       go.thing();
+      if(go.p1_lives == 0 || go.p2_lives == 0)
+      {
+        go.reset();
+      }
     }
     
     for(Pitch pitch: pitchs)
@@ -110,6 +114,10 @@ void draw()
       Object go = objects.get(i);
       go.position();
       go.thing();
+      if(go.p1_lives == 0 || go.p2_lives == 0)
+      {
+        go.reset();
+      }
     }
     
     for(Pitch pitch: pitchs)
@@ -133,6 +141,11 @@ void draw()
       Object go = objects.get(i);
       go.position();
       go.thing();
+      if(go.p1_lives == 0 || go.p2_lives == 0)
+      {
+        go.reset();
+      }
+
     }
     
     for(Star star: stars)
