@@ -2,6 +2,7 @@ class Player1 extends Object
 {
   char up;
   char down;
+  int p1_lives;
   
   Player1()
   {

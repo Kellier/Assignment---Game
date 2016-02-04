@@ -14,6 +14,7 @@ PImage img1;
 ArrayList<Object> objects = new ArrayList<Object>();
 ArrayList<Pitch> pitchs = new ArrayList<Pitch>();
 ArrayList<Star> stars = new ArrayList<Star>();
+ArrayList<Ball> ball1 = new ArrayList<Ball>();
 
 boolean[] keys = new boolean[512];
 
@@ -51,7 +52,7 @@ void setup()
   for(int j = 0; j < 3; j++)
   {
     Ball balls = new Ball('R', random(100, 900), random(0, height), color(255));
-    objects.add(balls);
+    ball1.add(balls);
   }
   
   smooth();
@@ -138,6 +139,12 @@ void draw()
     {
       star.position();
       star.thing();
+    }
+       
+    for(Ball balls: ball1)
+    {
+      balls.position();
+      balls.thing();
     }
     
   }

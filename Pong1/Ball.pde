@@ -18,7 +18,7 @@ class Ball extends Object
   
   void position()
   {
-    if((pos.x >= recta) && (pos.x <= recta + w) && (pos.y >= recty) && (pos.y <= recty + h))
+    /*if((pos.x >= recta) && (pos.x <= recta + w) && (pos.y >= recty) && (pos.y <= recty + h))
     {
       speedx = -speedx;
       c = color(7, 29, 103);
@@ -29,13 +29,24 @@ class Ball extends Object
       speedx = -speedx;
       c = color(227, 11, 11);
     }
+    */
     
-    if(pos.y > height - 10)
+    if(pos.x > width - 20)
+    {
+      speedx = -speedx;
+    }
+    
+    if(pos.x < 20)
+    {
+      speedx = -speedx;
+    }
+    
+    if(pos.y > height - 20)
     {
       speedy = -speedy;
     }
     
-    if(pos.y < 10)
+    if(pos.y < 20)
     {
       speedy = -speedy;
     }
@@ -47,6 +58,12 @@ class Ball extends Object
     
     pos.x = pos.x + speedx;
     pos.y = pos.y + speedy;
+    
+    if(frameCount % 350 == 0)
+    {
+      speedx ++;
+      speedy ++;
+    }
   }
   
   void thing()

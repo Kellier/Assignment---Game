@@ -28,8 +28,8 @@ abstract class Object
     this.wally = 0.0f;
     this.wallw = 20;
     this.wallh = 180;
-    this.speedx = random(3, 5);
-    this.speedy = random(3, 5);
+    this.speedx = 3;
+    this.speedy = 3;
     this.w = 5;
     this.h = 120;
     

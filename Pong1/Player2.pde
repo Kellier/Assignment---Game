@@ -2,6 +2,7 @@ class Player2 extends Object
 {
   char up;
   char down;
+  int p2_lives;
   
   Player2()
   {
@@ -17,7 +18,7 @@ class Player2 extends Object
     this.c = c;
   }
   
-    void position()
+  void position()
   {
     move.mult(speed);
     
