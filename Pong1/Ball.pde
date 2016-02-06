@@ -2,6 +2,8 @@ class Ball extends Object
 {
   float br = 10;
   char reset;
+  int p1_lives = 5;
+  int p2_lives = 5;
   
   Ball()
   {
@@ -18,28 +20,18 @@ class Ball extends Object
   
   void position()
   {
-    /*if((pos.x >= recta) && (pos.x <= recta + w) && (pos.y >= recty) && (pos.y <= recty + h))
+    /*if((pos.x >= 970 - br) && (pos.y >= recty))
     {
       speedx = -speedx;
       c = color(7, 29, 103);
     }
     
-    if((pos.x <= rectx) && (pos.x <= rectx + w) && (pos.y >= recty) && (pos.y <= recty + h))
+    if((pos.x <= 30 + br) && (pos.y >= recty))
     {
       speedx = -speedx;
       c = color(227, 11, 11);
     }
     */
-    
-    if(pos.x > width - 20)
-    {
-      speedx = -speedx;
-    }
-    
-    if(pos.x < 20)
-    {
-      speedx = -speedx;
-    }
     
     if(pos.y > height - 20)
     {
@@ -51,6 +43,36 @@ class Ball extends Object
       speedy = -speedy;
     }
     
+    if(pos.x > width)
+    {
+      p1_lives --;
+      reset();
+    }
+    
+    if(pos.x < 0)
+    {
+      p2_lives --;
+      reset();
+    }
+    
+    if(p1_lives == 0)
+    {
+      textAlign(CENTER);
+      textSize(50);
+      fill(227, 11, 11);
+      text("Player 2 Wins!!", width / 2, height / 2);
+      newgame();
+    }
+      
+    else if(p2_lives == 0)
+    {
+      textAlign(CENTER);
+      textSize(50);
+      fill(7, 29, 103);
+      text("Player 1 Wins!!", width / 2, height / 2);
+      newgame();
+    }
+        
     if(keys[reset])
     {
       reset();
@@ -74,9 +96,26 @@ class Ball extends Object
     fill(c);
     ellipse(0, 0, br * 2, br * 2);
     popMatrix();
+    
+    fill(227, 11, 11);
+    textSize(30);
+    text("Player 1:  " + p1_lives, 300, 40);
+    
+    fill(7, 29, 103);
+    textSize(30);
+    text("Player 2:  " + p2_lives, 600, 40);
   }
   
   void reset()
+  {
+    speedx = 3;
+    speedy = 3;
+    pos.x = random(100, 900);
+    pos.y = random(0, height);
+    br = 10;
+  }
+  
+  void newgame()
   {
     speedx = 3;
     speedy = 3;
@@ -86,4 +125,5 @@ class Ball extends Object
     pos.y = random(0, height);
     br = 10;
   }
+
 }

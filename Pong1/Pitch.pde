@@ -59,10 +59,6 @@ class Pitch extends Object
     
     pos.y = pos.y + speedy;
   }
-  
-  void reset()
-  {
-  }
 }
 
   

@@ -9,8 +9,6 @@ abstract class Object
   float wallx, wally;
   float wallw, wallh;
   float w, h;
-  int p1_lives;
-  int p2_lives;
   color c;
   
   Object()
@@ -34,12 +32,8 @@ abstract class Object
     this.h = 120;
     this.speedx = 3;
     this.speedy = 3;
-    this.p1_lives = 5;
-    this.p2_lives = 5;
-
   }
   
   abstract void position();
   abstract void thing();
-  abstract void reset();
 }
