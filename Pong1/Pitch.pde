@@ -31,26 +31,11 @@ class Pitch extends Object
     line(pitchx, 350, pitchx, 400);
   }
   
-  void wall(float startx, float starty, color c)
+  void wall()
   {
-    pushMatrix();
-    translate(pos.x, pos.y);
-    stroke(c);
-    fill(c);
-    rect(0, 0, wallw, wallh);
-    popMatrix();
-    
-    if(pos.y > height - wallh)
-    {
-      speedy = -speedy;
-    }
-    
-    if(pos.y < 0)
-    {
-      speedy = -speedy;
-    }
-    
-    pos.y = pos.y + speedy;
+    stroke(random(0 ,255), random(0, 255), random(0, 255));
+    fill(random(0 ,255), random(0, 255), random(0, 255));
+    rect(wallx, wally, wallw, wallh);
   }
   
   void newgame()

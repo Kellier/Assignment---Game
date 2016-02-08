@@ -26,18 +26,27 @@ class Ball extends Object
   
   void position()
   {
-    /*if((pos.x >= 970 - br) && (pos.y >= recty))
+    if((pos.x >= 970 - br) && (pos.x <= (970 - br) + w) && (pos.y >= recty) && (pos.y >= recty + h))
     {
       speedx = -speedx;
       c = color(7, 29, 103);
     }
     
-    if((pos.x <= 30 + br) && (pos.y >= recty))
+    if((pos.x <= 30 + br) && (pos.x >= (30 + br) + w) && (pos.y >= recty) && (pos.y >= recty + h))
     {
       speedx = -speedx;
       c = color(227, 11, 11);
     }
-    */
+    
+    if((pos.x >= wallx) && (pos.x <= wallx + wallh) && (pos.y >= wally) && (pos.y <= wally + wallh))
+    {
+      speedx = -speedx;
+    }
+    
+    if((pos.x <= wallx) && (pos.x >= wallx + wallh) && (pos.y >= wally) && (pos.y <= wally + wallh))
+    {
+      speedx = -speedx;
+    }
         
     if(pos.y > height - 20)
     {
@@ -51,13 +60,13 @@ class Ball extends Object
     
     if(pos.x > width)
     {
-      p1_lives --;
+      p2_lives --;
       reset();
     }
     
     if(pos.x < 0)
     {
-      p2_lives --;
+      p1_lives --;
       reset();
     }
         
@@ -68,12 +77,6 @@ class Ball extends Object
     
     pos.x = pos.x + speedx;
     pos.y = pos.y + speedy;
-    
-    if(frameCount % 350 == 0)
-    {
-      speedx ++;
-      speedy ++;
-    }
   }
   
   void thing()
@@ -92,16 +95,7 @@ class Ball extends Object
     fill(7, 29, 103);
     textSize(30);
     text("Player 2:  " + p2_lives, 600, 40);
-  }
-  
-  void barrier()
-  {
-    if((pos.x >= wallx) && (pos.x <= wallx + wallh) &&(pos.y >= wally) && (pos.y <= wally + wallh))
-    {
-      speedx = -speedx;
-    }
-  }
-    
+  } 
   
   void reset()
   {
@@ -112,8 +106,8 @@ class Ball extends Object
   
   void newgame()
   {
-    speedx = 3;
-    speedy = 3;
+    speedx = 5;
+    speedy = 5;
     p1_lives = 5;
     p2_lives = 5;
     pos.x = random(100, 900);

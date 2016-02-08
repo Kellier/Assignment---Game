@@ -37,8 +37,6 @@ void setup()
   Pitch pitch = new Pitch();
   pitchs.add(pitch);
   
-  Ball bar = new Ball();
-  ball1.add(bar);
   
   for(int i = 0; i < 40; i ++)
   {
@@ -120,14 +118,9 @@ void draw()
     
     for(Pitch pitch: pitchs)
     {
-      pitch.wall(490, 260, color(255));
+      pitch.wall();
     }
-    
-    for(Ball bar: ball1)
-    {
-      bar.barrier();
-    }
-    
+        
     for(Star star: stars)
     {
       star.position();
@@ -178,7 +171,7 @@ void GameLives()
         background(0);
         textAlign(CENTER, CENTER);
         textSize(50);
-        fill(227, 11, 11);
+        fill(7, 29, 103);
         text("Player 2 Wins!!", width / 2, height / 2);
         if(frameCount % 180 == 0)
         {
@@ -186,12 +179,12 @@ void GameLives()
         }
       }
       
-      if(go.p2_lives == 0)
+      else if(go.p2_lives == 0)
       {
         background(0);
         textAlign(CENTER, CENTER);
         textSize(50);
-        fill(7, 29, 103);
+        fill(227, 11, 11);
         text("Player 1 Wins!!", width / 2, height / 2);
         if(frameCount % 180 == 0)
         {

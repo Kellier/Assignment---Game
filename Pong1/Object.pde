@@ -26,14 +26,14 @@ abstract class Object
     this.rectx = 0.0f;
     this.recty = 0.0f;
     this.recta = 0.0f;
-    this.wallx = 0.0f;
-    this.wally = 0.0f;
+    this.wallx = 490;
+    this.wally = 260f;
     this.wallw = 20;
     this.wallh = 180;
     this.w = 5;
     this.h = 120;
-    this.speedx = 3;
-    this.speedy = 3;
+    this.speedx = 5;
+    this.speedy = 5;
     p1_lives = 5;
     p2_lives = 5;
   }
