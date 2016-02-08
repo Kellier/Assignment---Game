@@ -1,7 +1,5 @@
 class Pitch extends Object
 {
-  float wallx, wally;
-  float wallw, wallh;
   int pitchx, pitchy;
   float rad;
   
@@ -9,11 +7,6 @@ class Pitch extends Object
   {
     super(width * 0.5f, height * 0.5f, 50);
     println("In Pitch Default Constructor");
-    
-    this.wallx = width / 2 - 10;
-    this.wally = height / 2 - 90;
-    this.wallw = 20;
-    this.wallh = 180;
     
     this.pitchx = width / 2;
     this.pitchy = height;
@@ -58,6 +51,10 @@ class Pitch extends Object
     }
     
     pos.y = pos.y + speedy;
+  }
+  
+  void newgame()
+  {
   }
 }
 

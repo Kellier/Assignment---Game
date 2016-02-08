@@ -2,13 +2,19 @@ class Ball extends Object
 {
   float br = 10;
   char reset;
-  int p1_lives = 5;
-  int p2_lives = 5;
+  float wallx, wally;
+  float wallh, wallw;
+
   
   Ball()
   {
     super(width * 0.5f, height * 0.5f, 50);
     println("In Ball Default Constructor");
+    
+    this.wallx = width / 2 - 10;
+    this.wally = height / 2 - 90;
+    this.wallw = 20;
+    this.wallh = 180;
   }
   
   Ball(char reset, float startx, float starty, color c)
@@ -32,7 +38,7 @@ class Ball extends Object
       c = color(227, 11, 11);
     }
     */
-    
+        
     if(pos.y > height - 20)
     {
       speedy = -speedy;
@@ -53,24 +59,6 @@ class Ball extends Object
     {
       p2_lives --;
       reset();
-    }
-    
-    if(p1_lives == 0)
-    {
-      textAlign(CENTER);
-      textSize(50);
-      fill(227, 11, 11);
-      text("Player 2 Wins!!", width / 2, height / 2);
-      newgame();
-    }
-      
-    else if(p2_lives == 0)
-    {
-      textAlign(CENTER);
-      textSize(50);
-      fill(7, 29, 103);
-      text("Player 1 Wins!!", width / 2, height / 2);
-      newgame();
     }
         
     if(keys[reset])
@@ -106,10 +94,17 @@ class Ball extends Object
     text("Player 2:  " + p2_lives, 600, 40);
   }
   
+  void barrier()
+  {
+    if((pos.x >= wallx) && (pos.x <= wallx + wallh) &&(pos.y >= wally) && (pos.y <= wally + wallh))
+    {
+      speedx = -speedx;
+    }
+  }
+    
+  
   void reset()
   {
-    speedx = 3;
-    speedy = 3;
     pos.x = random(100, 900);
     pos.y = random(0, height);
     br = 10;

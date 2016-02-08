@@ -37,6 +37,9 @@ void setup()
   Pitch pitch = new Pitch();
   pitchs.add(pitch);
   
+  Ball bar = new Ball();
+  ball1.add(bar);
+  
   for(int i = 0; i < 40; i ++)
   {
     Star star = new Star(
@@ -99,6 +102,8 @@ void draw()
       pitch.position();
       pitch.thing();
     }
+    
+    GameLives();
 
   }
   
@@ -118,11 +123,19 @@ void draw()
       pitch.wall(490, 260, color(255));
     }
     
+    for(Ball bar: ball1)
+    {
+      bar.barrier();
+    }
+    
     for(Star star: stars)
     {
       star.position();
       star.thing();
     }
+    
+    GameLives();
+    
   }
   
   if( mode == "Hard" )
@@ -147,7 +160,46 @@ void draw()
       balls.position();
       balls.thing();
     }
+    
+    GameLives();
 
+  }
+}
+
+void GameLives()
+{
+  for(int i = objects.size() - 1; i >= 0; i--)
+  {
+    Object go = objects.get(i);
+    if(go instanceof Ball)
+    {
+      if(go.p1_lives == 0)
+      {
+        background(0);
+        textAlign(CENTER, CENTER);
+        textSize(50);
+        fill(227, 11, 11);
+        text("Player 2 Wins!!", width / 2, height / 2);
+        if(frameCount % 180 == 0)
+        {
+          go.newgame();
+        }
+      }
+      
+      if(go.p2_lives == 0)
+      {
+        background(0);
+        textAlign(CENTER, CENTER);
+        textSize(50);
+        fill(7, 29, 103);
+        text("Player 1 Wins!!", width / 2, height / 2);
+        if(frameCount % 180 == 0)
+        {
+           go.newgame();
+        }
+      }
+    }
+      
   }
 }
 

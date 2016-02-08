@@ -52,4 +52,8 @@ class Player1 extends Object
     rect(rectx, recty, w, h);
     popMatrix();
   }
+  
+  void newgame()
+  {
+  }
 }

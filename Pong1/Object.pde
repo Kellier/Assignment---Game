@@ -10,6 +10,8 @@ abstract class Object
   float wallw, wallh;
   float w, h;
   color c;
+  int p1_lives;
+  int p2_lives;
   
   Object()
   {
@@ -32,8 +34,11 @@ abstract class Object
     this.h = 120;
     this.speedx = 3;
     this.speedy = 3;
+    p1_lives = 5;
+    p2_lives = 5;
   }
   
   abstract void position();
   abstract void thing();
+  abstract void newgame();
 }
