@@ -1,51 +1,56 @@
+//Abstract/base class for all the other classes
 abstract class Object
 {
-  float rectx, recty;
-  float recta;
-  float w, h;
+  //Fields
+  //PVector for the positions of the different figures
+  PVector pos;
+  PVector move;
+  float theta = 0.0f;
+  //Fields for the paddles
+  float rectx, recty, recta;
+  //Field for speed
+  float speed = 5.0f;
+  float speedx, speedy;
+  //Fields for the barrier
   float wallx, wally;
   float wallw, wallh;
-  int pitchx, pitchy;
-  float rad;
-  float bx, by;
-  float br;
-  float speedx;
-  float speedy;
+  //Fields for width and height of paddles
+  float w, h;
+  //Field for color
   color c;
-  float cx, cy;
-  
+  //Fields for the lives of the players
+  int p1_lives;
+  int p2_lives;
   
   Object()
   {
-    this.rectx = 30;
-    this.recty = height / 2 - 60;
-    
-    this.recta = width - 40;
-    
-    this.w = 5;
-    this.h = 120;
-    
-    this.wallx = width / 2 - 10;
-    this.wally = height / 2 - 90;
-    this.wallw = 20;
-    this.wallh = 180;
-    
-    this.pitchx = width / 2;
-    this.pitchy = height;
-    this.rad = 100;
-    
-    this.bx = width / 2;
-    this.by = height / 2;
-    this.br = 10;
-    
-    this.speedx = random(3,5);
-    this.speedy = random(3,5);
-    
-    this.cx = random(0, width);
-    this.cy = random(0, height);
+    //Constructor chaining
+    this(width * 0.5f, height * 0.5f, 50);
   }
   
+  //Set all fields for their corresponding classes
+  Object(float x, float y, float w)
+  {
+    pos = new PVector(x, y);
+    move = new PVector(0, -1);
+    this.theta = 0.0f;
+    this.rectx = 0.0f;
+    this.recty = 0.0f;
+    this.recta = 0.0f;
+    this.wallx = 490;
+    this.wally = 260f;
+    this.wallw = 20;
+    this.wallh = 180;
+    this.w = 5;
+    this.h = 120;
+    this.speedx = 5;
+    this.speedy = 5;
+    p1_lives = 5;
+    p2_lives = 5;
+  }
+  
+  //Abstract methods for all the classes
   abstract void position();
   abstract void thing();
+  abstract void newgame();
 }
-    
