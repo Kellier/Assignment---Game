@@ -1,10 +1,13 @@
+//Class for Star which inherits the abstract class Object
 class Star extends Object
 {
+  //Fields for Star
   float points;
   float rotSpeed;
   float radius;
   float rot;
   
+  //Constructor with starting point and color return types and the amount fo points on each star
   Star(float x, float y, float radius, color c, int points)
   {
     super(x, y, radius * 2);
@@ -15,8 +18,10 @@ class Star extends Object
     rotSpeed = 0.01f;
   }
   
+  //Abstract method to set position of the stars and their rotations
   void position()
   {
+    //Set rotation speed
     rot += rotSpeed;
     if(rot > TWO_PI)
     {
@@ -24,6 +29,7 @@ class Star extends Object
     }
   }
   
+  //Abstract method to draw the stars using matrices and PVectors for the positions
   void thing()
   {
     pushMatrix();
