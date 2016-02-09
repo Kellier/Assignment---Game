@@ -29,7 +29,7 @@ void setup()
   size(1000, 700);
   
   //Load image
-  img1 = loadImage("Menu1.jpg");
+  img1 = loadImage("Menu2.jpg");
     
   //Set variables for the Player 21 paddle including positions, variables for movement and color
   Player ply = new Player(970, 290, color(7, 29, 103));
