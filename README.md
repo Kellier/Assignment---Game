@@ -8,4 +8,4 @@ I created different difficulties and different screens to brighten up my project
 
 The menu appears as so:
 
-https://cloud.githubusercontent.com/assets/15383888/12924235/fd5f23c8-cf50-11e5-8d0b-9a44b3c774b4.jpg
+![menu2](https://cloud.githubusercontent.com/assets/15383888/12924235/fd5f23c8-cf50-11e5-8d0b-9a44b3c774b4.jpg)
