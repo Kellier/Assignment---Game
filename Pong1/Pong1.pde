@@ -29,18 +29,14 @@ void setup()
   size(1000, 700);
   
   //Load image
-  img1 = loadImage("Menu.jpg");
-  
-  //Set variables for the Player 1 paddle including positions, variables for movement and color  
-  Player1 ply1 = new Player1('W', 'S', 30, 290, color(227, 11, 11));
-  objects.add(ply1);
-  
+  img1 = loadImage("Menu1.jpg");
+    
   //Set variables for the Player 21 paddle including positions, variables for movement and color
-  Player2 ply2 = new Player2('O', 'L', 970, 290, color(7, 29, 103));
-  objects.add(ply2);
+  Player ply = new Player(970, 290, color(7, 29, 103));
+  objects.add(ply);
   
   //Set variables for the ball including positions and color
-  Ball ball = new Ball('R', random(100, 900), random(0, height), color(255));
+  Ball ball = new Ball('R','N', random(100, 900), random(0, height), color(255));
   objects.add(ball);
   
   //Load pitch methods from the pitch array list
@@ -65,7 +61,7 @@ void setup()
   //For loop sets the number of balls for the hard level/screen
   for(int j = 0; j < 3; j++)
   {
-    Ball balls = new Ball('R', random(100, 900), random(0, height), color(255));
+    Ball balls = new Ball('R', 'N', random(100, 900), random(0, height), color(255));
     ball1.add(balls);
   }
   
@@ -138,12 +134,7 @@ void draw()
       Object go = objects.get(i);
       go.position();
       go.thing();
-    }
-    
-     //Load data from the pitch array list to set the screens
-    for(Pitch pitch: pitchs)
-    {
-      pitch.wall();
+      go.wall();
     }
     
     //Load data from the Stars array
@@ -151,6 +142,12 @@ void draw()
     {
       star.position();
       star.thing();
+    }
+    
+    //Load data from the pitch array list to set the screens
+    for(Pitch pitch: pitchs)
+    {
+      pitch.wall();
     }
     
     //Call GameLives method
@@ -200,33 +197,16 @@ void GameLives()
     //Name the global variable
     Object go = objects.get(i);
     if(go instanceof Ball)
-    {
+    {      
       //If statement to indicate what happens when player 1 loses all their lives
-      if(go.p1_lives == 0)
-      {
-        background(0);
-        textAlign(CENTER, CENTER);
-        textSize(50);
-        fill(7, 29, 103);
-        text("Player 2 Wins!!", width / 2, height / 2);
-        if(frameCount % 180 == 0)
-        {
-          go.newgame();
-        }
-      }
-      
-      //If statement to indicate what happens when player 1 loses all their lives
-      else if(go.p2_lives == 0)
+      if(go.p_lives == 0)
       {
         background(0);
         textAlign(CENTER, CENTER);
         textSize(50);
         fill(227, 11, 11);
-        text("Player 1 Wins!!", width / 2, height / 2);
-        if(frameCount % 180 == 0)
-        {
-           go.newgame();
-        }
+        text("Computer Wins, You Lose Chap!!", width / 2, height / 2);
+        text("Press N to restart", width / 2, 400);
       }
     }
       

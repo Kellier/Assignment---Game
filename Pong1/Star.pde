@@ -69,4 +69,8 @@ class Star extends Object
   {
   }
   
+  void wall()
+  {
+  }
+  
 }

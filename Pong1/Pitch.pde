@@ -36,16 +36,15 @@ class Pitch extends Object
     line(pitchx, 350, pitchx, 400);
   }
   
-  //Method to draw the wall in Medium Level
+  void newgame()
+  {
+  }
+  
   void wall()
   {
     stroke(random(0 ,255), random(0, 255), random(0, 255));
     fill(random(0 ,255), random(0, 255), random(0, 255));
     rect(wallx, wally, wallw, wallh);
-  }
-  
-  void newgame()
-  {
   }
 }
 
