@@ -6,4 +6,6 @@ During my work on the assignment i came across difficulties in implmentation of 
 
 I created different difficulties and different screens to brighten up my project. In doing this it helped my understanding of inheritance and polymorphism. I was successfully able to use abstract classes and encapsulation to better the running of my game.
 
-The menu ap
+The menu appears as so
+
+https://cloud.githubusercontent.com/assets/15383888/12924235/fd5f23c8-cf50-11e5-8d0b-9a44b3c774b4.jpg
